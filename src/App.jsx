@@ -5,18 +5,48 @@ class  App extends Component {
   constructor(){
     super()
     this.state={
-      string:'helloooooooooooooo'
+      monsters:[
+        {
+          name:'one',
+          id:'1'
+        },
+        {
+          name:'towo',
+          id:'2'
+        },
+        {
+          name:'three',
+          id:'3'
+        },
+        {
+          name:'four',
+          id:'4'
+        },
+        {
+          name:'five',
+          id:'5'
+        },
+      ]
     }
+    
   }
-  
+  componentDidMount(){
+    fetch('https://jsonplaceholder.typicode.com/users')
+    .then(resp => resp.json())
+    .then(users =< )
+  }
   render(){
 
   return (
     <div className="">
-        <h1 className="text-3xl text-indigo-500 font-bold underline">
-          {this.state.string}
-        </h1>
-        <button onClick={()=>this.setState({string:"kl;dsjf;lskd"})} className='px-4 py-2 m-4 bg-teal-100'>change</button>
+       {
+         this.state.monsters.map((monster)=>(
+           <div key={monster.id} className='flex w-full space-x-4 mx-4'>
+           <p>{monster.id}</p>
+           <p>{monster.name}</p>
+           </div>
+         ))
+       }
     </div>
   )}
 }

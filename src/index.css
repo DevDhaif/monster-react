@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer components{
+    .bbb{
+        @apply block w-full 
+        bg-gray input-color-gray input-color-gray font-roboto-100 rounded-md sm:text-sm p-3 bg-gray pr-4;
+    }
+}
